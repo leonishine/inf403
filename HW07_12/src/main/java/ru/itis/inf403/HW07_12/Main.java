@@ -10,6 +10,7 @@ public class Main {
         System.out.println(warrior);
         System.out.println(berserk);
         System.out.println(witch);
+        warrior.attack(healer);
         System.out.println(healer);
     }
 }
