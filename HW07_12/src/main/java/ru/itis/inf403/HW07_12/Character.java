@@ -15,6 +15,7 @@ public class Character {
         this.maxHp = maxHp;
         this.hp = maxHp;
         this.lvl = lvl;
+        this.atk = 1;
         this.enchanted = false;
     }
 

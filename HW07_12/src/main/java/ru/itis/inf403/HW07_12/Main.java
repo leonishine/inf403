@@ -9,8 +9,11 @@ public class Main {
 
         System.out.println(warrior);
         System.out.println(berserk);
-        System.out.println(witch);
+
+        healer.getDamage(5);
         warrior.attack(healer);
+        healer.attack(witch);
+        System.out.println(witch);
         System.out.println(healer);
     }
 }

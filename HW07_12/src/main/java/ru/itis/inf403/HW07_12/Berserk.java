@@ -8,6 +8,7 @@ public class Berserk extends Character{
     public Berserk(String name, int maxHp, int lvl) {
         super(name, maxHp, lvl);
         this.rage = false;
+        this.atk = 5;
     }
 
     public void startRage(){

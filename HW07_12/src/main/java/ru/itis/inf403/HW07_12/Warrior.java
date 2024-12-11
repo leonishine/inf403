@@ -7,6 +7,7 @@ public class Warrior extends Character {
 
     public Warrior(String name, int maxHp, int lvl) {
         super(name, maxHp, lvl);
+        this.atk = 4;
         this.armor = 0;
     }
 

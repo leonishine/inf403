@@ -10,6 +10,7 @@ public class Mage extends Character {
         super(name, maxHp, lvl);
         this.maxMana = maxMana;
         this.mana = maxMana;
+        this.atk = 3;
     }
 
     @Override
