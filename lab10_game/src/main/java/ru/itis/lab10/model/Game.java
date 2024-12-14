@@ -8,6 +8,7 @@ public class Game {
     private int finishFieldHeigth;
     private int finishX;
     private int finishY;
+    private int steps;
 
     public Game() {}
 
@@ -19,21 +20,24 @@ public class Game {
         this.finishFieldWidth = finishFieldWidth;
         this.finishX = finishX;
         this.finishY = finishY;
+        this.steps = 0;
     }
 
     public Entity start() {
         while (true) {
             for (int i = 0; i < players.length; i++) {
                 players[i].move();
+                steps++;
             }
 
             for (int i = 0; i < players.length; i++) {
                 if ((players[i].x > finishX && players[i].x <= finishX + finishFieldWidth)
                         && (players[i].y > finishY && players[i].y <= finishY + finishFieldHeigth)) {
-                    System.out.println(players[i]);
+                    System.out.println(players[i] + ", " + steps + " шагов");
                     return players[i];
                 }
             }
+
         }
     }
 
