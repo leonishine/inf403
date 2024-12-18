@@ -10,7 +10,7 @@ public class Train implements TransportAction {
 
     @Override
     public void move(City cityFrom, City cityTo, Passenger passenger) {
-        System.out.println(passenger + "moved by Train from " + cityFrom + " to " + cityTo);
+        System.out.println(passenger + " moved by Train from " + cityFrom + " to " + cityTo);
     }
 
     public void setCategory(String category) {

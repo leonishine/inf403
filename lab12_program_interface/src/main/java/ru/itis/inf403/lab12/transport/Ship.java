@@ -10,7 +10,7 @@ public class Ship implements TransportAction {
 
     @Override
     public void move(City cityFrom, City cityTo, Passenger passenger) {
-        System.out.println(passenger + "moved by Ship from " + cityFrom + " to " + cityTo);
+        System.out.println(passenger + " moved by Ship from " + cityFrom + " to " + cityTo);
     }
 
     public String getName() {
