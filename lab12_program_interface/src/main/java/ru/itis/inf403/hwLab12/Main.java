@@ -18,9 +18,16 @@ public class Main {
         list.add(new Apple("Зеленый", 70, "Антоновка", 115), 3);
         list.print();
 
-        list.pop();
+        System.out.println(list.pop());
+        System.out.println(list.remove(2));
+
         list.print();
 
+        list.printReverse();
+
+        list.sort();
+
+        list.print();
 
     }
 }

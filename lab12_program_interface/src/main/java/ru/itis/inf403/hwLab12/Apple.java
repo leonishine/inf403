@@ -18,9 +18,14 @@ public class Apple implements CanCompare {
     @Override
     public int compare(CanCompare other) {
         //if (this.getClass().equals(other.getClass())) {
-            return this.price - ((Apple)other).getPrice();
+        return this.price - ((Apple)other).getPrice();
         //}
         //return 0;
+    }
+
+    @Override
+    public String toString() {
+        return color + " " + kind + " " + weight + " гр, " + price + " руб/кг";
     }
 
     public int getPrice() {
@@ -43,7 +48,7 @@ public class Apple implements CanCompare {
         return weight;
     }
 
-    public void setWeight(int size) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 }
