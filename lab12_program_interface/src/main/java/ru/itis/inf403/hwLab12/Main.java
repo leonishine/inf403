@@ -15,11 +15,15 @@ public class Main {
 
         list.print();
 
-        list.add(new Apple("Зеленый", 70, "Антоновка", 115), 3);
+        list.add(new Apple("Зеленый", 70, "Молодильное", 115), 3);
         list.print();
+
+
 
         System.out.println(list.pop());
         System.out.println(list.remove(2));
+
+        System.out.println();
 
         list.print();
 

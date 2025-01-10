@@ -26,9 +26,10 @@ public class List2Direction {
             if (first == null) {
                 this.first = newNode;
                 this.last = newNode;
+                ++size;
             } else {
                 Node current = first;
-                for (int i = 0; i < pos; i++) {
+                for (int i = 0; i < pos - 1; i++) {
                     current = current.next;
                 }
                 Node prevPosNode = current;
@@ -38,6 +39,7 @@ public class List2Direction {
                 newNode.prev = prevPosNode;
                 newNode.next = nextPosNode;
                 nextPosNode.prev = newNode;
+                ++size;
             }
             return true;
         } else {
@@ -46,10 +48,11 @@ public class List2Direction {
     }
 
     public void sort() {
+        Node current;
         for (int i = 0; i < size; i++) {
-            Node current = first;
-            for (int j = 0; j < size; j++) {
-                if (current.value.compare(current.next.value) < 0) {
+            current = first;
+            for (int j = 0; j < size - 1; j++) {
+                if (current.value.compare(current.next.value) > 0) {
                     Node extra = new Node(current.value, current.prev, current.next);
                     current.prev = current.next;
                     current.next = current.next.next;
@@ -57,7 +60,7 @@ public class List2Direction {
                     current.next = current.prev;
                     current.prev = extra.prev;
                 }
-                //current = current.next;
+                current = current.next;
             }
         }
     }
@@ -66,17 +69,22 @@ public class List2Direction {
         String s = "";
         Node current = first;
         for (int i = 0; i < size; i++) {
-            s = s + current.value;
+            s += current.value.toString();
             current = current.next;
+            s += "\n";
         }
-        s = s + current.value;
+        //s = s + current.value.toString();
+        //s += "\n";
+
         return s;
     }
 
     public Apple pop() {
         last = last.prev;
+        Apple r = last.next.value;
         last.next = null;
-        return null;
+        --size;
+        return r;
     }
 
     public Apple remove(int pos) {
@@ -88,9 +96,10 @@ public class List2Direction {
         //current.next.prev = null;
         current.next = current.next.next;
         current = current.next;
+        Apple r = current.prev.value;
         current.prev = current.prev.prev;
-
-        return null;
+        --size;
+        return r;
     }
 
     public void print() {
@@ -99,12 +108,14 @@ public class List2Direction {
 
     public void printReverse() {
         String s = "";
-        Node current = first;
+        Node current = last;
         for (int i = size - 1; i >= 0; i--) {
             s = s + current.value;
             current = current.prev;
+            s += "\n";
         }
-        s = s + current.value;
+
+        //s = s + current.value;
         System.out.println(s);
     }
 

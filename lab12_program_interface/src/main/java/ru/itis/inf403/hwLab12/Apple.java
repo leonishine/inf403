@@ -17,10 +17,7 @@ public class Apple implements CanCompare {
 
     @Override
     public int compare(CanCompare other) {
-        //if (this.getClass().equals(other.getClass())) {
-        return this.price - ((Apple)other).getPrice();
-        //}
-        //return 0;
+        return this.price - ((Apple) other).getPrice();
     }
 
     @Override

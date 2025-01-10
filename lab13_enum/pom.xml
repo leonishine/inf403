@@ -5,14 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>inf403</artifactId>
+    <artifactId>lab13_enum</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>lab10_game</module>
-        <module>lab11_linked_list</module>
-        <module>lab12_program_interface</module>
-    </modules>
 
 
 </project>
