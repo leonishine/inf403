@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class Main1 {
     public static void main(String[] args) throws FileNotFoundException {
         System.out.println("Задача 1.");
-        Pattern pattern1 = Pattern.compile("(я|Я|мне|Мне|моё|Моё)");
+        Pattern pattern1 = Pattern.compile("(" + Service.makePattern("я") + "|" + Service.makePattern("мне") + "|" + Service.makePattern("моё") + ")");
         File file = new File("pushkin.txt");
         Service.match(pattern1, file);
         System.out.println();

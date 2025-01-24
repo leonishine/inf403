@@ -12,6 +12,7 @@
         <module>lab10_game</module>
         <module>lab11_linked_list</module>
         <module>lab12_program_interface</module>
+        <module>lab17_abstract</module>
     </modules>
 
 
