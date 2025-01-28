@@ -1,6 +1,6 @@
 package ru.itis.inf403.HW07_12;
 
-public class Berserk extends Character{
+public class Berserk extends Character {
     private boolean rage;
 
     public Berserk() {}

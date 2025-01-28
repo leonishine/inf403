@@ -9,6 +9,11 @@ public class CalculateIntegralMiddle extends AbstractCalculateIntegral{
 
     @Override
     public double get() {
-        return (b - a) * (function.calculate((b-a)/2));
+        double sum = 0;
+        double h = (b - a) / N;
+        for (int i = 0; i < N; ++i) {
+            sum += h * function.calculate(a + h*i + h/2);
+        }
+        return sum;
     }
 }
