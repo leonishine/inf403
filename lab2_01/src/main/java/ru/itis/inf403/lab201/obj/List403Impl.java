@@ -1,4 +1,4 @@
-package ru.itis.inf403.lab201;
+package ru.itis.inf403.lab201.obj;
 
 public class List403Impl implements List403 {
     private Integer[] values;
@@ -8,8 +8,6 @@ public class List403Impl implements List403 {
         this.size = 0;
         this.values = new Integer[10];
     }
-
-
 
     @Override
     public void add(Integer element) {

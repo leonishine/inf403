@@ -1,4 +1,4 @@
-package ru.itis.inf403.lab201;
+package ru.itis.inf403.lab201.obj;
 
 public class List403Test {
     public static void main(String[] args) throws IndexOutOfBoundsException{
