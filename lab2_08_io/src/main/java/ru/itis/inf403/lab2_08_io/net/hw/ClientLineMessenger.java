@@ -14,22 +14,20 @@ public class ClientLineMessenger {
             //Передаем данные серверу
             BufferedWriter os = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
+            Scanner sc = new Scanner(System.in);
             //Отправляем
             while (true) {
-                Scanner sc = new Scanner(System.in);
-                String message = sc.nextLine();
-                int size = message.getBytes().length;
 
-                os.write(message); //тело пакета
+                String message = sc.nextLine();
+
+                os.write(message + "\n"); //тело пакета
                 os.flush();
                 if (message.equals("exit")) {
                     break;
                 }
 
                 //читаем послание от клиента
-                byte[] buffer = new byte[size];
-                is.read();
-                message = new String(buffer);
+                message = is.readLine();
                 System.out.println(message);
 
 

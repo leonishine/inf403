@@ -1,8 +1,6 @@
 package ru.itis.inf403.lab2_08_io.net.hw;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
@@ -15,28 +13,24 @@ public class ServerLineMessenger {
             //Ожидаем подключения клиента
             Socket clientSocket = serverSocket.accept();
             //Дождались клиента
-            //Читаем данные от клиента
-            DataInputStream is = new DataInputStream(clientSocket.getInputStream());
+            //Чтение данных от клиента
+            BufferedReader is = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             //Передаем данные клиенту
-            DataOutputStream os = new DataOutputStream(clientSocket.getOutputStream());
+            BufferedWriter os = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
 
+            Scanner sc = new Scanner(System.in);
             while(true) {
                 //читаем послание от клиента
-                int size = is.readInt();
-                byte[] buffer = new byte[size];
-                is.read(buffer);
-                String message = new String(buffer);
+                String message = is.readLine();
                 System.out.println(message);
 
                 if (message.equals("exit")) {
                     break;
                 }
                 //Отправляем клиенту
-                Scanner sc = new Scanner(System.in);
+
                 message = sc.nextLine();
-                size = message.getBytes().length;
-                os.writeInt(size); //условно заголовок пакета
-                os.write(message.getBytes()); //тело пакета
+                os.write(message + "\n");
                 os.flush();
 
                 if (message.equals("exit")) {

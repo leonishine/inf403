@@ -63,7 +63,7 @@ public class TestMathUtil {
     void testSort() {
         MathUtil mathUtil = new MathUtil();
         assertArrayEquals(new int[] {1,2,3,4,5,6,7,8},
-                mathUtil.sort(new int[] {1,2,3,4,5,6,7,8}));
+                mathUtil.sort(new int[] {4,1,2,7,3,8,6,5}));
     }
 
     @AfterAll

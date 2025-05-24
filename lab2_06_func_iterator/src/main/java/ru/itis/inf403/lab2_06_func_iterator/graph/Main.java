@@ -6,9 +6,8 @@ public class Main {
     public static void main(String[] args) {
         Graph graph = new Graph();
         System.out.println(graph.getGraph());
-        Set<Character> set = graph.sort();
-        for (Character ch : set) {
-            System.out.println(ch);
+        for (Character c : graph) {
+            System.out.println(c);
         }
     }
 }
